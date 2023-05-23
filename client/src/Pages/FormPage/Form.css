@@ -1,0 +1,66 @@
+ .creat {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+  
+ .creat div {
+    margin-bottom: 10px;
+  }
+  
+  .creat label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .creat input[type="text"],
+  .creat input[type="url"],
+  .creat select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+ .creat span {
+    color: red;
+  }
+  
+ .creat input[type="range"] {
+    width: 100%;
+  }
+  
+ .botonCreat {
+
+    background-color: #ccc;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    text-align: center;
+  }
+
+  .creat button:disabled {
+    background-color: #ccc;
+     cursor: not-allowed; 
+  }  
+
+  .home {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    background-color: #ccc;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  

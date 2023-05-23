@@ -1,0 +1,33 @@
+.landin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../img/landing.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.pokemon-button {
+    position: fixed;
+    top: 50px;
+    right: 200px;
+    background-color: #ff0000;
+    color: #fff;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pokemon-button:hover {
+    background-color: #e60000;
+  }
+  
+  .pokemon-button:active {
+    background-color: #cc0000;
+  }

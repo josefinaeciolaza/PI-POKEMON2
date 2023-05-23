@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './Redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}> {/*Provider es un componente q se utiliza para conectar el store de redux con una aplicacion de react*/}
+    <BrowserRouter>
+    <App />   {/*envolvemos el componente App con el Provider, lo que permite que todos los componentes dentro de App tengan acceso al store. */}
+    </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

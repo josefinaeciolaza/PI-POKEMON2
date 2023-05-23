@@ -1,0 +1,25 @@
+.divNav {
+    background-color: #ff0000;
+    height: 50px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+.cambio {
+    border-radius: 5px;
+}
+
+
+.botonCreat {
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #ff0000;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .botonCreat:hover {
+    background-color: #ffcccc;
+  }
