@@ -27,7 +27,7 @@ function validate(form){
         if(!imagenExReg.test(form.image)){
            errors.image = "image invalid"
        }
-       if(form.hp === 0 || form.attack === 0 || form.defense === 0 || form.speed === 0) {
+       if(form.hp === 0 || form.attack === 0 || form.defense === 0) {
            errors.hp = 'Complete all stats!'
        }
    
@@ -107,9 +107,9 @@ function handleDelete(event) {
   };
 
   const isFormValid = () => {
-    return form.name && form.types && form.image;
+    return form.name && form.image && form.hp && form.attack && form.defense;
   };
-
+  console.log(isFormValid());
 
     return(
         <div>
@@ -131,7 +131,7 @@ function handleDelete(event) {
             {errors.image && <span>{errors.image}</span>}
         </div>
         <div>
-            <label>Hit Points: </label>
+            <label>Life: </label>
             <input type="range" min='1' max='200' value={form.hp} name="hp" onChange={handleChange}/>
             <span>{form.hp}</span> {/* Mostrar el valor seleccionado */}
             {errors.hp && <span>{errors.hp}</span>}
@@ -164,7 +164,7 @@ function handleDelete(event) {
         <div>
             <label>Type: </label>
             <select name="types"  value={form.types} onChange={selectHandle} >
-                <option value="" >Select types</option>
+                <option value="" disabled >Select types</option>
                 {typesAll.map((type) => ( //bucle map para generar las opciones de tipo basadas en el estado typesAll que se obtiene del store de Redux
                 <option key={type.id} value={type.name}>
                 {type.name}

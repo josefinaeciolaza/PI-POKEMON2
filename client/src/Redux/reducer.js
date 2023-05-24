@@ -57,20 +57,17 @@ const reducer = (state = initialState, action) => {
         allPokemons: filteredPokemons
       };
     case FILTER_TYPE:
-        const pokemonsByType = state.allPokemons;
-        const filterByType =
+      const pokemonsByType = state.pokemons;
+      const filterByType =
         action.payload === 'all'
-        ? pokemonsByType
-        : pokemonsByType.filter((p) => {
-           const typeV = p.types.some(types => {
-            const tipo = types.name || types
-            return tipo === action.payload
-          })
-          return typeV;
-        })
-        // const pokemonsType = state.pokemons
-        // const filterByType = pokemonsType.filter((pokemon)=> pokemon.types.some((type)=> type.name === action.payload)
-        // )
+          ? pokemonsByType
+          : pokemonsByType.filter((p) =>
+              p.types.some((types) => {
+                const tipo = types.name || types;
+                return tipo === action.payload;
+              })
+            );
+            console.log(filterByType);
     return {
         ...state,
         allPokemons: filterByType

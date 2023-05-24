@@ -19,50 +19,13 @@ export default function Card({ pokemon }) {
         <img className="img" src={pokemon.image} alt={pokemon.name} />
       </div>
       <h2> {pokemon.name}</h2>
-      {/* <div className="types">
-        {pokemon.types.map((types, index) => (
-          <div key={index}>Type: {types}</div>
-        ))}
-      </div> */}
-      {/* <div className="types">
-  {Array.isArray(pokemon.types) ? (
-      // Si pokemon.types es un array, renderizar los tipos como lo haces normalmente
-    pokemon.types.map((type, index) => (
-      <div key={index} className="type">
-        Type: {type}
-      </div>
-    ))
-  ) : (
-    // Si pokemon.types es un objeto con una estructura diferente, adaptar la forma de mostrar los tipos
-    Object.values(pokemon.types).map((type, index) => (
-      <div key={index} className="type">
-        Type: {type.name}
-      </div>
-    ))
-  )}
-</div> */}
-      {/* <div className="types">
-        {pokemon.types.map((types, index) => (
-          <div key={index} className="type">
-            Type: {types.name}
-          </div>
-        ))}
-      </div> */}
       <div className="types">
-  {Array.isArray(pokemon.types) ? (
-    // Si pokemon.types es un array
-    pokemon.types.map((type, index) => (
-      <div key={index} className="type">
-       {type.name || type}
+        {pokemon.types.map((type) => (
+        <div className="type">
+        {type.name || type}
+        </div>
+      ))}
       </div>
-    ))
-  ) : (
-    // Si pokemon.types no es un array, asumo que es un objeto con estructura { name: 'tipo' }
-    <div className="type">
-      Type: {pokemon.types.name}
-    </div>
-  )}
-</div>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.paginado-items {
+    width: 100%;
+  }
+  
+  .paginado-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .paginado-list li {
+    margin: 0 5px;
+  }
+  
+  .paginado-list li button {
+    background-color: #ccc;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .paginado-list li button.active {
+    background-color: #ff0000;
+    color: #fff;
+  }

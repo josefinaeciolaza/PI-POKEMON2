@@ -74,8 +74,7 @@ export const clearDetail = () => ({
   export const addPokemon = (payload) => {
     return async function (dispatch){
         try {
-            const response = await axios.post('http://localhost:3001/pokemons', payload);
-            console.log(response);
+          await axios.post('http://localhost:3001/pokemons', payload);
             return dispatch({ 
                 type: ADD_POKEMON, 
             });
