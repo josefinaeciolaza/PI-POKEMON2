@@ -12,11 +12,7 @@ export default function SearchBar (){
         e.preventDefault()
         setSearch(e.target.value)
     }
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     dispatch(getByName(search));
-    // }
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(getByName(search)).then((result) => {

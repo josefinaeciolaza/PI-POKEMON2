@@ -90,7 +90,7 @@ function handleDelete(event) {
   }
 
   const submitHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //se usa en el submit
     dispatch(addPokemon(form));
     setForm({
         name: '',
@@ -172,13 +172,13 @@ function handleDelete(event) {
                 ))}
             </select>
             <div>
-        {form.types.map((selectedType) => (
-          <span key={selectedType}>
-            {selectedType}
-            <button onClick={() => handleDelete(selectedType)}>X</button>
-          </span>
-        ))}
-      </div>
+                {form.types.map((selectedType) => (
+                <span key={selectedType}>
+                    {selectedType}
+                <button onClick={() => handleDelete(selectedType)}>X</button>
+                </span>
+                ))}
+            </div>
         </div>
         <button className="botonCreat" type="submit" disabled={!isFormValid()}>Create POKEMON</button>
     </form>

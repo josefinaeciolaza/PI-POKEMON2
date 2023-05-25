@@ -10,7 +10,7 @@ export const FILTER_ORIGIN = "FILTER_ORIGIN";
 export const FILTER_TYPE = "FILTER_TYPE";
 export const ORDER_ALPA = "ORDER_ALPA";
 export const ORDER_ATTACK = "ORDER:ATTACK";
-export const CLEAR_F_O = "CLEAR_F_O";
+export const CLEAR_REFRESH = "CLEAR_REFRESH";
 
 
 export function getPokemons (){
@@ -84,9 +84,9 @@ export const clearDetail = () => ({
     }
   };
 
-  export const clearFO = () => {
+  export const clearRefresh = () => {
     return{
-      type: CLEAR_F_O
+      type: CLEAR_REFRESH
     }
   };
   

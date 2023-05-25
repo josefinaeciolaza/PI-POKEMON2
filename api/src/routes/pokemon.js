@@ -60,7 +60,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     const {name, image, hp, attack, speed, defense, height, weight, types } = req.body;
     try {
-        if(!name || !hp || !attack || !speed || !defense || !types){
+        if(!name || !hp || !attack || !defense || !types){
             return res.status(400).json({ message: 'Please provide all required fields' });
         }
         const newpoke = await Pokemon.create({

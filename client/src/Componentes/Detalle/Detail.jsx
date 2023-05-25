@@ -26,7 +26,7 @@ export default function Detail (){
         <div className="text-container">
           <h2>{detail.name}</h2>
           <h2>ID: {detail.id}</h2>
-          <h3>Hit Points: {detail.hp}</h3>
+          <h3>Life: {detail.hp}</h3>
           <h3>Height: {detail.height}</h3>
           <h3>Weight: {detail.weight} KG</h3>
           <h3>Speed: {detail.speed}</h3>

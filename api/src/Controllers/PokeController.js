@@ -6,7 +6,7 @@ const { Pokemon, Type } = require('../db');
     try{
     const response = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=100"); //PETICION A LA API, CON UN LIMITE DE 100 POKEMONS;
     const allResponse = response.data.results; //ACCEDO AL OBJETO DATA Y A SU CAMPO RESULTS, LOS GUARDO EN UNA VARIABLE
-    const pokemonData = await Promise.all( //PETICION A CADA POKEMON DE FORMA ASINCRONICA, NO  SABEMOS EN QUE ORDEN RECIBIREMOS LAS RESPUESTAS Y PARA RECIBIRLAS EN ORDEN HACEMOS UN Promis.all: Esta función recibe una matriz de promesas y devuelve una nueva promesa que se resuelve cuando todas las promesas en la matriz se han resuelto.
+    const pokemonData = await Promise.all( //se utiliza Promise.all para esperar todas las respuestas de las peticiones individuales a los endpoints de los pokémons.
         allResponse.map(async (pokemon) => {
           const res = await axios.get(pokemon.url); //HACEMOS UN GET A CADA UNO DE LOS ENDPOINTS DE LA API, QUE CONTIENEN LA INFO DE C/POKEMON.
           return res.data;

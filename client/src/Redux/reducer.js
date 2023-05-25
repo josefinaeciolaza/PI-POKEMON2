@@ -1,4 +1,4 @@
-import { ALL_POKEMONS, GET_BY_NAME, GET_DETAIL, CLEAR_DETAIL, GET_TYPES, ADD_POKEMON, FILTER_ORIGIN, FILTER_TYPE, ORDER_ALPA, ORDER_ATTACK } from "./actions";
+import { ALL_POKEMONS, GET_BY_NAME, GET_DETAIL, CLEAR_DETAIL, GET_TYPES, ADD_POKEMON, FILTER_ORIGIN, FILTER_TYPE, ORDER_ALPA, ORDER_ATTACK, CLEAR_REFRESH } from "./actions";
 
 const initialState = {
   pokemons: [], // todos lo pokemons 
@@ -101,6 +101,12 @@ const reducer = (state = initialState, action) => {
         return {
           ...state,
           allPokemons: pokeAttack
+        };
+      case CLEAR_REFRESH:
+        const pokemonsRefresh = state.pokemons
+        return{
+          ...state,
+          allPokemons: pokemonsRefresh
         };
     default:
       return state;

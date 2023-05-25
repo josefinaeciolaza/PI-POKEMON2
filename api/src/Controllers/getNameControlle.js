@@ -13,7 +13,7 @@ try{
         return{
             id: pok.data.id,
             name: pok.data.name,
-            image: pok.data.sprites.front_default,  // url imagen
+            image: pok.data.sprites.other["official-artwork"]["front_default"],  // url imagen
             hp: pok.data.stats[0].base_stat,
             attack: pok.data.stats[1].base_stat,
             defense: pok.data.stats[2].base_stat,
