@@ -3,14 +3,19 @@ import CardList from "../../Componentes/CardList/CardsList";
 import NavBar from "../../Componentes/NavBar/NavBar";
 import { useState } from "react";
 import Paginado from "../../Componentes/Paginado/Paginado";
-import { useSelector, useDispatch } from "react-redux";
-import { clearRefresh } from "../../Redux/actions";
+import { useSelector } from "react-redux";
+import './Home.css'
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
 
   const allPokemons = useSelector((state) => state.allPokemons);
 
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  function handleClick(){
+      navigate('/pokemon/create')
+  };
 
   //ESTADOS LOCALES.
   const [currentPage, setCurrentPage] = useState(1); //PAGINA ACTUAL.
@@ -25,14 +30,10 @@ export default function Home() {
       setCurrentPage(pageNumber)//se actualiza el estado de currentPage utilizando setCurrentPage con el valor de pageNumber. Esto cambia la página actual a la página seleccionada
      }
 
-     function handleRefresh(e){
-      e.preventDefault();
-      dispatch(clearRefresh());
-  }
   return (
     <div>
-      <NavBar />
-      <button onClick={handleRefresh}>refresh</button>
+      <NavBar setCurrentPage={setCurrentPage}/>
+      <button onClick={handleClick} className="botonCreat">Create pokemon</button>
       <CardList currentPoke={currentPoke}/>
       <Paginado perPage={perPage} totalPoke={allPokemons.length} paginado={paginado} currentPage={currentPage} />
     </div>

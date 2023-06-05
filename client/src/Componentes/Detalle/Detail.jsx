@@ -36,7 +36,7 @@ export default function Detail (){
               <div>
                 {detail.types.map((type) => (
             <div className="type">
-              {type.name || type}
+              {type.name || type} {/* se accede a la propiedad name de cada elemento del array. Si la propiedad name existe, se muestra; de lo contrario, se muestra el valor del elemento en sí*/}
             </div>
                ))}
               </div>

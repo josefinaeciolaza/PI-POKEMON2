@@ -1,23 +1,19 @@
 import React, {useEffect} from "react";
 import { useDispatch } from "react-redux";
-import { filterOrigin, filterType, getTypes, orderAlpa, orderAttack } from "../../Redux/actions";
+import { filterOrigin, filterType, getTypes, orderAlpa, orderAttack, clearRefresh } from "../../Redux/actions";
 import { useSelector } from "react-redux";
 import './NavBar.css';
 import SearchBar from "../SearchBar/searchBar";
-import { useNavigate } from "react-router-dom";
+import pokemonLogo from '../../img/pokemonLogo.png'
 
 
-export default function NavBar (){
+export default function NavBar ({setCurrentPage}){
 
     const typesALL = useSelector((state) => state.types);
 
     const dispatch = useDispatch();
      
-    const navigate = useNavigate();
 
-    function handleClick(){
-        navigate('/pokemon/create')
-    };
 
     useEffect(() => {
         dispatch(getTypes());
@@ -27,25 +23,36 @@ export default function NavBar (){
     const handleFilterChange = (e) => {
       const value = e.target.value;
       dispatch(filterOrigin(value));
+      setCurrentPage(1)
     };
     
     const handleFilterTypeChange = (e) => {
         const value = e.target.value;
         dispatch(filterType(value));
+        setCurrentPage(1)
       };
     
     const handleOrderAlpha = (e) => {
       const value = e.target.value;
       dispatch(orderAlpa(value))
+      setCurrentPage(1)
     };
 
     const handleOrderAttack = (e) => {
       const value = e.target.value;
       dispatch(orderAttack(value))
+      setCurrentPage(1)
     };
  
+    function handleRefresh(e){
+      e.preventDefault();
+      dispatch(clearRefresh());
+  }
     return (
         <div className="divNav">
+            <button className="refresh-button" onClick={handleRefresh}>
+            <img src={pokemonLogo} alt="Pokémon Logo" className="refresh-logo" />
+            </button>
               <select onChange={handleFilterChange} className="cambio">
                 <option value="">Select creator</option>
                 <option value="api">API</option>
@@ -60,7 +67,7 @@ export default function NavBar (){
                 </option>
                 ))}
             </select>
-            <SearchBar/>
+            <SearchBar setCurrentPage={setCurrentPage}/>
             <select onChange={handleOrderAlpha} className="cambio">
               <option value="">Order alphabetically</option>
               <option value='ASCENDENT'>A - Z</option>
@@ -71,7 +78,7 @@ export default function NavBar (){
               <option value='MORE'>Biggest attack</option>
               <option value='LESS'>Less attack</option>
             </select>
-            <button onClick={handleClick} className="botonCreat">Create pokemon</button>
+
         </div>
 
       );

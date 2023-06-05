@@ -1,25 +1,28 @@
 .divNav {
     background-color: #ff0000;
-    height: 50px;
+    height: 60px;
     display: flex;
     flex-direction:row;
     justify-content: space-evenly;
+
 }
 
 .cambio {
     border-radius: 5px;
+    height: 50px;
+}
+
+.refresh-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  margin-right: 0px;
+}
+.refresh-logo {
+  width: 120px; /* Ajusta el tamaño según tus necesidades */
+  height: 70px; /* Ajusta el tamaño según tus necesidades */
 }
 
 
-.botonCreat {
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: #ff0000;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .botonCreat:hover {
-    background-color: #ffcccc;
-  }

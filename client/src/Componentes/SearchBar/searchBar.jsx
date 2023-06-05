@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { getByName } from "../../Redux/actions";
 import './serchBar.css'
 
-export default function SearchBar (){
+export default function SearchBar ({setCurrentPage}){
     const dispatch = useDispatch();
 
     const [search, setSearch] = useState("");
@@ -21,6 +21,7 @@ export default function SearchBar (){
             alert("No se encontró ningún Pokémon con ese nombre.");
           }
         });
+        setCurrentPage(1)
       };
     return(
         <div className="search-container">

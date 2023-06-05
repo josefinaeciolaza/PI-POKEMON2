@@ -67,7 +67,6 @@ const reducer = (state = initialState, action) => {
                 return tipo === action.payload;
               })
             );
-            console.log(filterByType);
     return {
         ...state,
         allPokemons: filterByType
