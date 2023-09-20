@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 .botonCreat {
+  font-family: 'Roboto', sans-serif;
   border-radius: 5px;
-  background-color: #ffffff;
-  color: #ff0000;
-  padding: 8px 16px;
+  background-color: #ccc;
+  color: black;
+  padding: 10px 20px;
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 50px; 
-  right: 20px; 
+  top: 70px;
+  right: 100px;
   z-index: 999; /* Asegura que el botón esté por encima del contenido de la página */
 }
 

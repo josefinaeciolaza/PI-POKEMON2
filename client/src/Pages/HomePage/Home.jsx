@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div>
       <NavBar setCurrentPage={setCurrentPage}/>
-      <button onClick={handleClick} className="botonCreat">Create pokemon</button>
+      <button onClick={handleClick} className="botonCreat">Crear pokemon</button>
       <CardList currentPoke={currentPoke}/>
       <Paginado perPage={perPage} totalPoke={allPokemons.length} paginado={paginado} currentPage={currentPage} />
     </div>

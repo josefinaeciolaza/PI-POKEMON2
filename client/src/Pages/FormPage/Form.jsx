@@ -180,7 +180,7 @@ function handleDelete(event) {
                 ))}
             </div>
         </div>
-        <button className="botonCreat" type="submit" disabled={!isFormValid()}>Create POKEMON</button>
+        <button className="botonCreat2" type="submit" disabled={!isFormValid()}>Create POKEMON</button>
     </form>
 
     </div>

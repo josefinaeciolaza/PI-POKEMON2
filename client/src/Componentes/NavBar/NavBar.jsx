@@ -54,13 +54,13 @@ export default function NavBar ({setCurrentPage}){
             <img src={pokemonLogo} alt="Pokémon Logo" className="refresh-logo" />
             </button>
               <select onChange={handleFilterChange} className="cambio">
-                <option value="">Select creator</option>
+                <option value="">Selecionar creador</option>
                 <option value="api">API</option>
-                <option value="user">Usuario</option>
+                <option value="user">Usuarios</option>
               </select>
               <select onChange={handleFilterTypeChange} className="cambio">
-                <option value="" >Select type</option>
-                <option value="all">All Pokemons</option>
+                <option value="" >Selecionar tipo</option>
+                <option value="all">Todos los Pokemons</option>
                 {typesALL.map((type) => ( //bucle map para generar las opciones de tipo basadas en el estado typesAll que se obtiene del store de Redux
                 <option key={type.id} value={type.name}>
                 {type.name}
@@ -69,14 +69,14 @@ export default function NavBar ({setCurrentPage}){
             </select>
             <SearchBar setCurrentPage={setCurrentPage}/>
             <select onChange={handleOrderAlpha} className="cambio">
-              <option value="">Order alphabetically</option>
+              <option value="">Orden alfabetico</option>
               <option value='ASCENDENT'>A - Z</option>
               <option value='DESCENDENT'>Z - A</option>
             </select>
             <select onChange={handleOrderAttack} className="cambio">
-              <option value=''>Sort by attack</option>
-              <option value='MORE'>Biggest attack</option>
-              <option value='LESS'>Less attack</option>
+              <option value=''>Orden por ataque</option>
+              <option value='MORE'>Mayor ataque</option>
+              <option value='LESS'>Menor ataque</option>
             </select>
 
         </div>
